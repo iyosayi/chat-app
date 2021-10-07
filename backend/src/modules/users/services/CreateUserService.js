@@ -14,12 +14,13 @@ export default class CreateUserService {
       throw new UniqueConstraintError("User with this email exist.");
     } 
 
+    const image = faker.image.imageUrl()
     const user = await this.userRepository.insert({
       email: email.toLowerCase(),
       firstName,
       lastName,
       password,
-      imageUrl: faker.image.imageUrl()
+      imageUrl: image
     });
     const token = sign({ email: user.email, id: user._id }, env.JWT_SECRET, {
       subject: String(user._id),
