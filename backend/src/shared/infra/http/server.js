@@ -7,6 +7,8 @@ import path from "path";
 import cors from "cors";
 import compression from "compression";
 import helmet from "helmet";
+import dotenv from "dotenv";
+dotenv.config();
 
 const build = path.resolve("..", "frontend", "dist");
 const app = express();
@@ -30,10 +32,17 @@ global.io = io;
 socketHandler(io);
 
 app.get("/health", (req, res) => {
-  res.send('ok')
-})
-app.use((req, res, next) => {
-  res.sendFile(path.join(build, "index.html"));
+  res.send("ok");
 });
+
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static(build));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(build, "index.html"));
+  });
+}
+
 
 export default server;
