@@ -22,8 +22,6 @@ jobs:
         with:
           mongodb-version: ${{ matrix.mongodb-version }}
       - name: Copy .env file
-        env:
-          JWT_SECRET: ${{secrets.JWT_SECRET}}
         run: |
           cd backend && touch .env
           echo JWT_SECRET=${{secrets.JWT_SECRET}} >> .env
@@ -32,8 +30,6 @@ jobs:
           echo PORT=${{secrets.PORT}} >> .env
           cat .env
       - name: Run install and Tests
-        env:
-          CI: true
         run: |
           cd backend && yarn install
           yarn run dev && sleep 10 && curl http://localhost:6000 && yarn test
