@@ -1,0 +1,50 @@
+{
+  "name": "chatapi",
+  "version": "1.0.0",
+  "description": "Backend for Chat",
+  "main": "index.js",
+  "author": "King Etiosasere",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/index.js",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "test": "cross-env NODE_ENV=test mocha ./tests/**/*.spec.js -r @babel/register --timeout=100000 --exit",
+    "clean": "rimraf dist",
+    "build": "npm run clean && babel src -d dist"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.15.4",
+    "@heroku/buildpack-registry": "^1.0.1",
+    "awilix": "^5.0.1",
+    "awilix-express": "^4.0.0",
+    "axios": "^0.22.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "helmet": "^4.6.0",
+    "http-status-codes": "^2.1.4",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.8",
+    "socket.io": "^4.2.0",
+    "supertest": "^6.1.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/register": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "nodemon": "^2.0.13",
+    "rimraf": "^3.0.2"
+  }
+}

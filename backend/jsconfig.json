@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@utils/*": ["utils/*"],
+      "@tests/*": ["test/*"],
+      "@modules/*": ["modules/*"],
+      "@shared/*": ["shared/*"],
+      "@config/*": ["config/*"],
+      "@validations/*": ["validations/*"],
+      "@sockets/*": ["sockets/*"]
+    }
+  }
+}

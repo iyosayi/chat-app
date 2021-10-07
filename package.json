@@ -1,0 +1,31 @@
+{
+  "name": "chat-group",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/iyosayi/chat-group.git",
+  "author": "King <iyosa14@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "yarn clean && cd backend && babel src -d dist --source-maps --copy-files && cd .. && cd frontend && yarn build",
+    "start": "cd backend && node ./dist/index.js",
+    "test": "cd backend && cross-env NODE_ENV=test  mocha ./tests/**/*.spec.js -r @babel/register --timeout=100000 --exit"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/register": "^7.15.3",
+    "@babel/runtime": "^7.15.4",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.2",
+    "nodemon": "^2.0.13"
+  }
+}
