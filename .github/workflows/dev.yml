@@ -29,7 +29,6 @@ jobs:
       - name: Run install and Tests
         run: |
           cd backend && yarn install
-          cd ..
           yarn run dev && sleep 10 && curl http://localhost:6000 && yarn test
           yarn run build
       - name: Set github credentials
