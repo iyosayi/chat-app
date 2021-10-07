@@ -30,7 +30,7 @@ jobs:
         run: |
           cd backend && yarn install
           cd ..
-          yarn start && sleep 10 && curl http://localhost:6000 && yarn test
+          yarn run dev && sleep 10 && curl http://localhost:6000 && yarn test
           yarn run build
       - name: Set github credentials
         run: |

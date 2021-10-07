@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "yarn clean && cd backend && babel src -d dist --source-maps --copy-files && cd .. && cd frontend && yarn build",
-    "start": "cd backend && node ./dist/index.js",
+    "start": "yarn run build && cd backend && node ./dist/index.js",
     "test": "cd backend && cross-env NODE_ENV=test  mocha ./tests/**/*.spec.js -r @babel/register --timeout=100000 --exit"
   },
   "dependencies": {
