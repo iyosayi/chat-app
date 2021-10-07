@@ -28,6 +28,10 @@ const io = new Server(server, {
 global.io = io;
 
 socketHandler(io);
+
+app.get("/health", (req, res) => {
+  res.send('ok')
+})
 app.use((req, res, next) => {
   res.sendFile(path.join(build, "index.html"));
 });
