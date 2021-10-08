@@ -20,6 +20,7 @@ app.use(compression());
 app.use(helmet());
 app.use("/api", routes);
 
+// server config
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
