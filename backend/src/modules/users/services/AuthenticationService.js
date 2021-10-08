@@ -15,7 +15,6 @@ export default class AuthenticationService {
     if (!user) {
       throw new InvalidPropertyError("User with this email does not exist.");
     }
-    console.log("user", user.password);
     const isPasswordValid = await comparePassword(password, user.password);
     if (!isPasswordValid) {
       throw new InvalidPropertyError("Password is incorrect");
