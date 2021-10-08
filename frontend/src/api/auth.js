@@ -38,13 +38,13 @@ import { AuthContext } from "../context/auth";
 
 export const loginAuth = () => {
   const axiosInstance = axios.create({
-    baseURL: "https://dabatech.herokuapp.com/api",
+    // baseURL: "https://dabatech.herokuapp.com/api",
   });
 
   const { mutateAsync } = useMutation(({ email, password }) => {
     return axiosInstance({
       method: "POST",
-      url: "/users/auth",
+      url: "/api/users/auth",
       data: {
         email: email,
         password: password,
@@ -57,14 +57,14 @@ export const loginAuth = () => {
 
 export const signupAuth = () => {
   const axiosInstance = axios.create({
-    baseURL: "https://dabatech.herokuapp.com/api",
+    // baseURL: "https://dabatech.herokuapp.com/api",
   });
 
   const { mutateAsync } = useMutation(
     ({ firstName, lastName, email, password }) => {
       return axiosInstance({
         method: "POST",
-        url: "/users",
+        url: "/api/users",
         data: {
           firstName: firstName,
           lastName: lastName,

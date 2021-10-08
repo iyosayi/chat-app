@@ -7,7 +7,7 @@ export const allChannels = () => {
   const { auth } = useContext(AuthContext);
 
   const axiosInstance = axios.create({
-    baseURL: "https://dabatech.herokuapp.com/api",
+    // baseURL: "https://dabatech.herokuapp.com/api",
     headers: {
       Authorization: `Bearer ${auth.token}`,
     },
@@ -17,7 +17,7 @@ export const allChannels = () => {
     try {
       const res = await axiosInstance({
         method: "GET",
-        url: "/channels",
+        url: "/api/channels",
       });
       return res.data.data;
     } catch (err) {
@@ -33,7 +33,7 @@ export const createChannel = () => {
   const { auth } = useContext(AuthContext);
 
   const axiosInstance = axios.create({
-    baseURL: "https://dabatech.herokuapp.com/api",
+    // baseURL: "https://dabatech.herokuapp.com/api",
     headers: {
       Authorization: `Bearer ${auth.token}`,
     },
@@ -43,7 +43,7 @@ export const createChannel = () => {
     ({ name, description, createdBy }) => {
       return axiosInstance({
         method: "POST",
-        url: "channels",
+        url: "/api/channels",
         data: {
           name: name,
           description: description,

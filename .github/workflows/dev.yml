@@ -52,3 +52,7 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}}
         env:
           HD_YARN_PRODUCTION: false
+          HD_JWT_SECRET: ${{secrets.JWT_SECRET}}
+          HD_MONGO_DB_URL: ${{secrets.MONGO_DB_URL}}
+          HD_JWT_EXPIRATION: ${{secrets.JWT_EXPIRATION}}
+          

@@ -7,7 +7,7 @@ export const channelMessages = (channelId) => {
   const { auth } = useContext(AuthContext);
 
   const axiosInstance = axios.create({
-    baseURL: "https://dabatech.herokuapp.com/api",
+    // baseURL: "https://dabatech.herokuapp.com/api",
     headers: {
       Authorization: `Bearer ${auth.token}`,
     },
@@ -19,7 +19,7 @@ export const channelMessages = (channelId) => {
       try {
         const res = await axiosInstance({
           method: "GET",
-          url: `/channels/chat/${channelId}`,
+          url: `/api/channels/chat/${channelId}`,
         });
         return res.data.data;
       } catch (err) {
