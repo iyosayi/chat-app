@@ -13,8 +13,8 @@
     "clean": "rimraf dist",
     "backend:install": "cd backend && yarn install",
     "frontend:install": "cd frontend && yarn install",
-    "backend": "cd backend && yarn install && yarn clean && babel src -d dist --source-maps --copy-files",
-    "frontend": "cd frontend && yarn install && yarn run build",
+    "backend": "cd backend && yarn clean && babel src -d dist --source-maps --copy-files",
+    "frontend": "cd frontend && yarn run build",
     "build": "yarn backend && yarn frontend",
     "start": "cd backend && node ./dist/index.js",
     "heroku-prebuild": "yarn backend:install && yarn frontend:install"
