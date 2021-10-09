@@ -23,3 +23,21 @@ To test the socket events, we can use `Postman`, simply click on the `New` butto
 
 ## API Docs
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/dc860d17f0894e44afc7?action=collection%2Fimport)
+Tests are also run in Postman to test the API.
+
+## How To Use
+
+<!-- Example: -->
+
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/iyosayi/chat-app.git
+
+# Install dependencies
+$ yarn install
+
+# Run the app
+$ yarn dev
+```
