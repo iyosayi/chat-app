@@ -25,6 +25,9 @@ To test the socket events, we can use `Postman`, simply click on the `New` butto
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/dc860d17f0894e44afc7?action=collection%2Fimport)
 Tests are also run in Postman to test the API.
 
+## Environment for postman 
+[dabatech_url](https://dabatech.herokuapp.com/api)
+
 ## How To Use
 
 <!-- Example: -->
